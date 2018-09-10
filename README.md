@@ -1,2 +1,2 @@
 # wc-link
-`&lt;wc-link>` web component
+`<wc-link>` web component

@@ -1,0 +1,49 @@
+.wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  border: solid 1px #d4d4d4;
+  border-radius: 5px;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+.wrapper:hover,
+.wrapper:active {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 11px 20px;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+.info .icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 20px;
+  position: relative;
+  background: transparent url('./images/link.svg') top left no-repeat;
+}
+.info .data .label {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #333333;
+}
+.goto {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: transparent url('./images/goto.svg') top left no-repeat;
+  outline: none;
+}
+.goto:hover {
+  background: transparent url('./images/goto-hover.svg') top left no-repeat;
+}
+.goto:active {
+  background: transparent url('./images/goto-active.svg') top left no-repeat;
+}
