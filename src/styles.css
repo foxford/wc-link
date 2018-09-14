@@ -1,10 +1,13 @@
 .wrapper {
   width: 100%;
+  display: block;
   background-color: #ffffff;
-  border: solid 1px #d4d4d4;
+  border: solid 1px #e9e9e9;
   border-radius: 5px;
+  cursor: pointer;
   user-select: none;
-  transition: box-shadow 0.2s ease;
+  outline: none;
+  text-decoration: none;
 }
 .wrapper:hover,
 .wrapper:active {
@@ -34,16 +37,19 @@
   line-height: 1.5;
   color: #333333;
 }
+.wrapper:hover .info .data .label,
+.wrapper:active .info .data .label {
+  color: #48A1E6;
+}
 .goto {
   width: 16px;
   height: 16px;
   display: block;
   background: transparent url('./images/goto.svg') top left no-repeat;
-  outline: none;
 }
-.goto:hover {
+.wrapper:hover .goto {
   background: transparent url('./images/goto-hover.svg') top left no-repeat;
 }
-.goto:active {
+.wrapper:active .goto {
   background: transparent url('./images/goto-active.svg') top left no-repeat;
 }

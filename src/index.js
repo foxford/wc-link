@@ -11,7 +11,7 @@ class Link extends LitElement {
     const { label, url } = props
 
     return html`
-      <div class="wrapper">
+      <a target="_blank" href="${url}" class="wrapper">
         <div class="row">
           <div class="info">
             <div class="icon"></div>
@@ -20,10 +20,10 @@ class Link extends LitElement {
             </div>
           </div>
           <div>
-            <a target="_blank" href="${url}" class="goto"></a>
+            <div class="goto"></div>
           </div>
         </div>
-      </div>
+      </a>
     `
   }
 }
