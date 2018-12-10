@@ -1,9 +1,13 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   entry: {
-    'wc-link': './src/wc-link.js'
+    'link': './src/link.js'
   },
   output: {
-    filename: '[name].js'
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: 'WCLink'
   },
   module: {
     rules: [
@@ -20,5 +24,14 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ecma: 5,
+        comments: false
+      }
+    })]
   }
 }

@@ -42,20 +42,31 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.7/core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.0.2/webcomponents-bundle.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.0.2/custom-elements-es5-adapter.js"></script>
-<script src="dist/wc-link.js"></script>
-<script>
-  var link = document.getElementById('link')
-  var label = document.getElementById('label')
-  var url = document.getElementById('url')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
 
-  label.addEventListener('input', function (e) {
-    link.setAttribute('label', e.target.value)
-  })
-  url.addEventListener('input', function (e) {
-    link.setAttribute('url', e.target.value)
-  })
+<script>if (!window.customElements) { document.write('<!--'); }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.1.2/custom-elements-es5-adapter.js"></script>
+<!--! do not remove -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.1.2/webcomponents-bundle.js"></script>
+
+<script src="dist/link.js"></script>
+<script>
+  window.customElements.define('wc-link', WCLink.Link)
+
+  function initialize(){
+    var link = document.getElementById('link')
+    var label = document.getElementById('label')
+    var url = document.getElementById('url')
+
+    label.addEventListener('input', function (e) {
+      link.setAttribute('label', e.target.value)
+    })
+    url.addEventListener('input', function (e) {
+      link.setAttribute('url', e.target.value)
+    })
+  }
+
+  window.document.addEventListener('WebComponentsReady', initialize)
 </script>
 </body>
 </html>
